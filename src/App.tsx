@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Plus, Save, User, Calendar, Image } from "lucide-react";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 // Definisikan tipe data
 type FormData = {
@@ -272,6 +274,18 @@ const TravelFormApp = () => {
                 <Save className="mr-2" size={20} />
                 {isLoading ? "Menyimpan..." : "Simpan Data"}
               </button>
+              {/* ✅ TAMPILKAN PESAN DI SINI — TEPAT DI BAWAH TOMBOL */}
+              {message && (
+                <div
+                  className={`mt-3 p-3 rounded-lg text-sm ${
+                    message.includes("berhasil")
+                      ? "bg-green-100 text-green-700 border border-green-200"
+                      : "bg-red-100 text-red-700 border border-red-200"
+                  }`}
+                >
+                  {message}
+                </div>
+              )}
             </div>
           </div>
 
