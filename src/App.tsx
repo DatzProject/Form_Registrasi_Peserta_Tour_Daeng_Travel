@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Plus, Save, User, Calendar, Image } from "lucide-react";
-import jsPDF from "jspdf";
-import autoTable from "jspdf-autotable";
 
 // Definisikan tipe data
 type FormData = {
